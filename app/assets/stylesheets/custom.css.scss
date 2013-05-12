@@ -1,0 +1,100 @@
+@import 'bootstrap';
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	padding-top: 60px;
+}
+
+section {
+	overflow-y: auto;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.center {
+	text-align: center;
+}
+
+.center h1 {
+	margin-bottom: 10px;
+}
+
+.navbar-inner {
+	background-color: #87b3d8;
+	background-image: none;
+	background-repeat: no-repeat;
+	filter: none;
+	text-shadow: none;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer li {
+  float: left;
+  margin-left: 10px;
+}
+
+footer small {
+  float: left;
+}
+
+.navbar .nav > li > a {
+  text-shadow: none;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+select {
+  padding: 0px;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
