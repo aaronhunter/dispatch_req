@@ -106,3 +106,7 @@ input {
   margin-top: 45px;
   @include box_sizing;
 }
+
+#error-explanation h2 {
+  font-style: none;
+}
