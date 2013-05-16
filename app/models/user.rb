@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :center_id, :name
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+(@henryschein.com)$/i
+  validates :email, format: VALID_EMAIL_REGEX
+  validates :name, :center_id, presence: true
 end

@@ -1,7 +1,6 @@
 DispatchReq::Application.routes.draw do
 
-  devise_for :users, controllers: { sessions: 'users/sessions' }
-  resources :users, only: {:show}
+  devise_for :users
 
   root to: 'static_pages#home'
 
@@ -10,6 +9,4 @@ DispatchReq::Application.routes.draw do
   get "static_pages/help"
 
   get "static_pages/about"
-
-  get "users/show"
 end
