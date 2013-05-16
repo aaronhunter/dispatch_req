@@ -2,6 +2,7 @@ DispatchReq::Application.routes.draw do
   devise_for :users
 
   resources :profiles
+  resources :requests
 
   get "static_pages/home"
 

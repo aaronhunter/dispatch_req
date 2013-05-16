@@ -1,0 +1,56 @@
+<% provide(:title, "Create Dispatch") %>
+
+<h1 class="center">Dispatch Creation</h1>
+
+<div class="row">
+  <%= form_for(:requests) do |f| %>
+
+    <section class="span6">
+      Dispatch requested by: <%= @user.name %>
+
+      <%= f.label :center_id, "Center" %>
+      <%= collection_select :request, :center_id, Center.all, :id, :name %>
+
+      <%= f.label :cust_name, "Client Account Name" %>
+      <%= f.text_field :cust_name %>
+
+      <%= f.label :phone, "Office Phone" %>
+      <%= f.phone_field :phone %>
+
+      <%= f.label :jde, "JDE Number" %>
+      <%= f.number_field :jde %>
+
+      <%= f.label :contact_name %>
+      <%= f.text_field :contact_name %>
+    </section>
+    <section class="span6">
+
+      <!--<%= f.label :contact_phone, "Alternate phone?" %>
+      <%= f.phone_field :contact_phone %>
+
+      <%= f.label :bill_status, "Billing type for service" %>
+      <%= f.text_field :bill_status %>!-->
+
+      <%= f.label :priority %>
+      <%= f.text_field :priority %>
+
+      <%= f.label :time_est, "Time requested for service (hours)" %>
+      <%= f.number_field :time_est %>
+
+      <%= f.label :office_down, "Does the office need to be down for service?" %>
+      <%= f.check_box :office_down, {}, "Yes", "No" %>
+
+      <%= f.label :cit_level, "CIT Level requested" %>
+      <%= f.text_field :cit_level %>
+
+      <%= f.label :parts, "Additional parts/tools requested" %>
+      <%= f.text_field :parts %>
+    </section>
+    <div>
+      <%= f.label :notes %>
+      <%= f.text_area :notes %>
+
+      <%= f.submit "Create dispatch and send email", class: "btn btn-large btn-primary" %>
+    </div>
+  <% end %>
+</div>
