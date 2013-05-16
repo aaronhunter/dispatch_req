@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :center_id, :name
 
+  belongs_to :center
+  has_many :dispatches
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+(@henryschein.com)$/i
   validates :email, format: VALID_EMAIL_REGEX
   validates :name, :center_id, presence: true
