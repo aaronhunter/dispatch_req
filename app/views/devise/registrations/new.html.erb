@@ -17,7 +17,8 @@
   <%= f.password_field :password_confirmation %>
 
   <%= f.label :center_id, "Center" %>
-  <%= f.select :center_id, options_for_select([ ['TechCentral', 1 ], ['TXGP - Grand Prairie, TX', 2] ]) %>
+  <%# f.select :center_id, options_for_select([ ['TechCentral', 1 ], ['TXGP - Grand Prairie, TX', 2] ]) %>
+  <%= collection_select :user, :center_id, Center.all, :id, :name %>
 
   <%= f.submit "Sign up", class: "btn btn-large btn-primary" %>
 <% end %>

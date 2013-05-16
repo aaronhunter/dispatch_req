@@ -4,10 +4,10 @@
 <div class="span6 offset3">
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <%= f.label :email %><br />
+  <%= f.label :email %>
   <%= f.email_field :email, :autofocus => true %>
 
-  <%= f.label :password %><br />
+  <%= f.label :password %>
   <%= f.password_field :password %>
 
   <% if devise_mapping.rememberable? -%>
