@@ -16,6 +16,6 @@ class CreateRequests < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :requests, :created_user_id, :center_id, unique: true
+    add_index :requests, [:created_user_id, :center_id], unique: true
   end
 end
