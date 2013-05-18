@@ -9,7 +9,7 @@
       Dispatch requested by: <%= @user.name %>
 
       <%= f.label :center_id, "Center" %>
-      <%= collection_select :request, :center_id, Center.all, :id, :name %>
+      <%= collection_select :request, :center_id, Center.all, :id, :name %><br />
 
       <%= f.label :cust_name, "Client Account Name" %>
       <%= f.text_field :cust_name %>
@@ -25,11 +25,11 @@
     </section>
     <section class="span6">
 
-      <!--<%= f.label :contact_phone, "Alternate phone?" %>
+      <%= f.label :contact_phone, "Alternate phone?" %>
       <%= f.phone_field :contact_phone %>
 
       <%= f.label :bill_status, "Billing type for service" %>
-      <%= f.text_field :bill_status %>!-->
+      <%= f.text_field :bill_status %>
 
       <%= f.label :priority %>
       <%= f.text_field :priority %>
