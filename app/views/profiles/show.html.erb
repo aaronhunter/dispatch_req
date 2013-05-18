@@ -1,5 +1,26 @@
 <% provide(:title, "#{@user.name}'s Profile") %>
-<h1>
-  <%= gravatar_for(@user) %>
-  <%= @user.name %>
-</h1>
+<div class="row">
+  <aside class="span4">
+    <section class"left">
+      <h2>
+        <%= gravatar_for(@user) %>
+        <%= @user.name %>
+      </h2>
+    </section>
+    <nav class="profilenav span8">
+      <ul>
+        <li><%= link_to "Create Dispatch", new_request_path, class: "btn btn-primary btn-profile" %></li>
+        <li><%= link_to "Find Dispatch", '#', class: "btn btn-primary btn-profile" %></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="span8">
+    <% if @user.requests.any? %>
+      <h2>Recent Requests</h2>
+      <ol>
+        <%= render @requests %>
+      </ok>
+      <%= will_paginate @requests %>
+    <% end %>
+  </div>
+</div>

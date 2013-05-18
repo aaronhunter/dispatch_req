@@ -129,25 +129,58 @@ input {
 }
 
 #strength {
-  margin-left: 5px;
+  line-height: 10px;
 }
 
-#strength .short {
-  color: #FF0000 !important;
+#register .short {
+  color: #FF0000;
 }
 
-#strength .weak {
-  color: #E66C2C !important;
+#register .weak {
+  color: #E66C2C;
 }
 
-#strength .good {
-  color: #7FFF00 !important;
+#register .good {
+  color: #7FFF00;
 }
 
-#strength .strong {
-  color: #006400 !important;
+#register .strong {
+  color: #006400;
 }
 
-#strength .verystrong {
-  color: #0000FF !important;
+#register .verystrong {
+  color: #0000FF;
+}
+
+.profilenav {
+  list-style: none;
+  padding: 4px 4px;
+  ul li {
+    list-style: none;
+    margin: 20px 20px;
+  }
+}
+
+.btn-profile {
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#E60000, endColorstr="#CC0000");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#E60000), to(#CC0000));
+  background-image: -moz-linear-gradient(top, #E60000, #CC0000);
+  background-image: -ms-linear-gradient(top, #E60000, #CC0000);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #E60000), color-stop(100%, #CC0000));
+  background-image: -webkit-linear-gradient(top, #E60000, #CC0000);
+  background-image: -o-linear-gradient(top, #E60000, #CC0000);
+  background-image: linear-gradient(#E60000, #CC0000);
+  border-color: #CC0000 #CC0000 hsl(201, 100%, 25%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-font-smoothing: antialiased;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }

@@ -47,9 +47,7 @@ $(document).ready(function() {
     //two special characters?
     if (password.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,",%,&,@,#,$,^,*,?,_,~])/)) strength += 1
 
-    if (password.length > 23) strength += 5
-
-    if (strength < 2 ) {
+    if (strength < 3 ) {
       $('#strength').removeClass()
       $('#strength').addClass('weak')
       return 'Weak'
@@ -57,14 +55,10 @@ $(document).ready(function() {
       $('#strength').removeClass()
       $('#strength').addClass('good')
       return 'Good'
-    } else if (strength <= 5) {
+    } else if (strength == 5) {
       $('#strength').removeClass()
       $('#strength').addClass('strong')
       return 'Strong'
-    } else if (strength > 7) {
-      $('#strength').removeClass()
-      $('#strength').addClass('verystrong')
-      return 'Very Strong'
     }
   }
 });

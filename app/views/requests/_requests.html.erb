@@ -1,0 +1,6 @@
+<li>
+  <span class="subject"><%= request.cust_name %></span>
+  <span class="timestamp">
+    Sent <%= time_ago_in_words(request.created_at) %>ago.
+  </span>
+</li>
