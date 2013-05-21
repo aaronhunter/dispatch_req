@@ -1,56 +1,59 @@
 <% provide(:title, "Create Dispatch") %>
 
-<h1 class="center">Dispatch Creation</h1>
-
 <div class="row">
-  <%= form_for(:requests) do |f| %>
+  <h3>Dispatch requested by: <%= current_user.name %></h3><br />
+  <%= form_for(@request) do |f| %>
 
-    <section class="span6">
-      Dispatch requested by: <%= @user.name %>
-
+    <section class="span6 controls">
       <%= f.label :center_id, "Center" %>
-      <%= collection_select :request, :center_id, Center.all, :id, :name %><br />
+      <%= collection_select :request, :center_id, Center.all, :id, :name %>
 
       <%= f.label :cust_name, "Client Account Name" %>
       <%= f.text_field :cust_name %>
 
       <%= f.label :phone, "Office Phone" %>
-      <%= f.phone_field :phone %>
+      <%= f.phone_field :phone, placeholder: "Primary phone on account" %>
 
       <%= f.label :jde, "JDE Number" %>
       <%= f.number_field :jde %>
 
       <%= f.label :contact_name %>
       <%= f.text_field :contact_name %>
+
+      <%= f.label :contact_phone, "Contact phone" %>
+      <%= f.text_field :contact_phone, placeholder: "555-555-5555 ext. 5" %>
     </section>
-    <section class="span6">
 
-      <%= f.label :contact_phone, "Alternate phone?" %>
-      <%= f.phone_field :contact_phone %>
-
+    <section class="span6 controls secondcolumn">
       <%= f.label :bill_status, "Billing type for service" %>
-      <%= f.text_field :bill_status %>
+      <%= f.text_field :bill_status, placeholder: "HTWR, HTRG, HTEM, HTSS, TBD" %>
 
       <%= f.label :priority %>
-      <%= f.text_field :priority %>
+      <%= f.text_field :priority, placeholder: "Normal, High, Emergency" %>
 
       <%= f.label :time_est, "Time requested for service (hours)" %>
       <%= f.number_field :time_est %>
 
-      <%= f.label :office_down, "Does the office need to be down for service?" %>
-      <%= f.check_box :office_down, {}, "Yes", "No" %>
-
       <%= f.label :cit_level, "CIT Level requested" %>
-      <%= f.text_field :cit_level %>
+      <%= f.text_field :cit_level, placeholder: "Specify CIT here, if requested" %>
 
       <%= f.label :parts, "Additional parts/tools requested" %>
       <%= f.text_field :parts %>
-    </section>
-    <div class="row">
-      <%= f.label :notes %>
-      <%= f.text_area :notes %>
 
+      <div class="form-inline checkbox">
+        <%= f.check_box :office_down %>
+        <%= f.label "Does the office need to be down for service?" %>
+      </div>
+    </section>
+
+    <section class="span12">
+      <%= f.label :notes %>
+      <%= f.text_area :notes, placeholder: "Concise description of troubleshooting done and further instruction",
+                              class: "technotes" %>
+    </section>
+
+    <section class="span12 center">
       <%= f.submit "Create dispatch and send email", class: "btn btn-large btn-primary" %>
-    </div>
+    </section>
   <% end %>
 </div>

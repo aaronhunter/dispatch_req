@@ -19,7 +19,7 @@ $(document).ready(function() {
 
   $('#user_password').keyup(function(){
         $('#strength').html(check_strength($('#user_password').val()))
-  })
+  });
 
   function check_strength(password) {
     var strength = 0
@@ -32,7 +32,6 @@ $(document).ready(function() {
     }
 
     //add to strength if meeting standards
-
     if (password.length > 7) strength += 1
 
     //upper case?

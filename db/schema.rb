@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517235103) do
+ActiveRecord::Schema.define(:version => 20130518194529) do
 
   create_table "centers", :force => true do |t|
     t.string   "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20130517235103) do
   end
 
   create_table "requests", :force => true do |t|
-    t.integer  "created_user_id"
+    t.integer  "user_id"
     t.integer  "center_id"
     t.string   "cust_name"
     t.string   "contact_name"
@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(:version => 20130517235103) do
     t.string   "jde"
     t.boolean  "office_down"
     t.string   "parts"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "contact_phone"
     t.string   "bill_status"
   end
 
-  add_index "requests", ["created_user_id", "center_id"], :name => "index_requests_on_created_user_id_and_center_id", :unique => true
+  add_index "requests", ["user_id", "center_id"], :name => "index_requests_on_created_user_id_and_center_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
