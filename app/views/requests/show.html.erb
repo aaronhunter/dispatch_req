@@ -1,0 +1,111 @@
+<h3>Dispatch Request #<%= @request.id %></h3>
+<p>Requested by: <%= User.find(@request.user_id).name %></p>
+<table class="request-table span6">
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>Center:</p>
+    </td>
+    <td>
+      <p><%= Center.find(@request.center_id).name %></p>
+    </td>
+  </tr>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>Client Account Name:</p>
+    </td>
+    <td>
+      <p><%= @request.office_name %></p>
+    </td>
+  </tr>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>Office Phone:</p>
+    </td>
+    <td>
+      <p><%= @request.phone %></p>
+    </td>
+  </tr>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>JDE:</p>
+    </td>
+    <td>
+      <p><%= @request.jde %></p>
+    </td>
+  </tr>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>Contact Name:</p>
+    </td>
+    <td>
+      <p><%= @request.contact_name %></p>
+    </td>
+  </tr>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>Contact Phone</p>
+    </td>
+    <td>
+      <p><%= @request.contact_phone %></p>
+    </td>
+  </tr>
+</table>
+<table class="request-table span6">
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>Billing Type:</p>
+    </td>
+    <td>
+      <p><%= @request.bill_status %></p>
+    </td>
+  </tr>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>Priority:</p>
+    </td>
+    <td>
+      <p><%= @request.priority %></p>
+    </td>
+  </tr>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>Time Requested:</p>
+    </td>
+    <td>
+      <p><%= @request.est_time %></p>
+    </td>
+  </tr>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>CIT Level:</p>
+    </td>
+    <td>
+      <p><%= @request.cit_level %></p>
+    </td>
+  </tr>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>Additional Parts:</p>
+    </td>
+    <td>
+      <p><%= @request.parts %></p>
+    </td>
+  </tr>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <p>Down for service?</p>
+    </td>
+    <td>
+      <% if @request.office_down %>
+        <p>Yes</p>
+      <% else %>
+        <p>No</p>
+      <% end %>
+    </td>
+  </tr>
+</table>
+<section>
+  <p>Notes<br/>
+    <%= @request.notes %>
+  </p>
+</section>

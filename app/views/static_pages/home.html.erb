@@ -1,12 +1,27 @@
 <% provide(:title, "Home") %>
+<% if user_signed_in? %>
+<div class="row">
+  <aside class="span4">
+    <section class"left">
+      <%= render 'shared/user_info' %>
+    </section>
+    <nav class="profilenav span8">
+      <ul>
+        <li><%= link_to "Create Dispatch", new_request_path, class: "btn btn-primary btn-profile" %></li>
+        <li><%= link_to "Find Dispatch", '#', class: "btn btn-primary btn-profile" %></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="span8">
+    <%= render 'shared/request_info' %>
+  </div>
+</div>
+<% else %>
 <div class="center hero-unit">
   <h1 class="center">Welcome to DispatchLink!</h1>
 
   <h2>Authorized access only.</h2>
 
-  <% if user_signed_in? %>
-    <%= link_to "Create Dispatch", new_request_path, class: "btn btn-large btn-primary" %>
-  <% else %>
-    <%= link_to "Sign up here", new_user_registration_path, class: "btn btn-large btn-primary" %>
-  <% end %>
+  <%= link_to "Sign up here", new_user_registration_path, class: "btn btn-large btn-primary" %>
 </div>
+<% end %>

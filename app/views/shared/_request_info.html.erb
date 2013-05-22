@@ -1,0 +1,7 @@
+<% if @user.requests.any? %>
+  <h2>Recent Requests</h2>
+    <ol>
+      <%= render @requests %>
+    </ol>
+  <%= will_paginate @requests %>
+<% end %>
