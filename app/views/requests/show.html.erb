@@ -14,7 +14,7 @@
       <p>Client Account Name:</p>
     </td>
     <td>
-      <p><%= @request.office_name %></p>
+      <p><%= @request.cust_name %></p>
     </td>
   </tr>
   <tr class="<%= cycle("odd", "even") %>">
@@ -72,7 +72,7 @@
       <p>Time Requested:</p>
     </td>
     <td>
-      <p><%= @request.est_time %></p>
+      <p><%= @request.time_est %></p>
     </td>
   </tr>
   <tr class="<%= cycle("odd", "even") %>">
@@ -104,7 +104,7 @@
     </td>
   </tr>
 </table>
-<section>
+<section class="span12">
   <p>Notes<br/>
     <%= @request.notes %>
   </p>

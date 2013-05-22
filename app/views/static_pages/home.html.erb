@@ -1,7 +1,7 @@
 <% provide(:title, "Home") %>
 <% if user_signed_in? %>
 <div class="row">
-  <aside class="span4">
+  <aside class="span6">
     <section class"left">
       <%= render 'shared/user_info' %>
     </section>
@@ -12,7 +12,7 @@
       </ul>
     </nav>
   </aside>
-  <div class="span8">
+  <div class="span6">
     <%= render 'shared/request_info' %>
   </div>
 </div>

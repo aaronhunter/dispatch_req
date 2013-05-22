@@ -8,7 +8,7 @@ class CreateRequests < ActiveRecord::Migration
       t.string :phone
       t.string :priority
       t.integer :time_est
-      t.integer :cit_level
+      t.string :cit_level
       t.string :notes
       t.string :jde
       t.boolean :office_down

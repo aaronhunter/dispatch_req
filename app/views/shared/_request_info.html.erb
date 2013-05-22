@@ -1,4 +1,4 @@
-<% if @user.requests.any? %>
+<% if Request.count > 0 %>
   <h2>Recent Requests</h2>
     <ol>
       <%= render @requests %>
