@@ -30,7 +30,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bootstrap-sass (2.3.1.2)
+    bootstrap-sass (2.3.1.3)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
       will_paginate
@@ -62,7 +62,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
-    multi_json (1.7.3)
+    multi_json (1.7.4)
     orm_adapter (0.4.0)
     pg (0.15.1)
     polyglot (0.3.3)
@@ -105,12 +105,12 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.11.0)
     sass (3.2.9)
-    sass-rails (3.2.6)
+    sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    select2-rails (3.3.2)
-      sass-rails (>= 3.2)
+    select2-rails (3.4.1)
+      sass-rails
       thor (~> 0.14)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -143,7 +143,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.13)
   rspec-rails (= 2.11.0)
-  sass-rails (~> 3.2.5)
+  sass-rails (= 3.2.5)
   select2-rails
   sqlite3 (= 1.3.5)
   uglifier (>= 1.2.3)

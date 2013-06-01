@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
   has_many :requests
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+(@henryschein.com)$/i
-  validates :email, format: VALID_EMAIL_REGEX
+  validates :email, format: VALID_EMAIL_REGEX, message: "Must be valid Henry Schein email."
   validates :name, :center_id, presence: true
 end
