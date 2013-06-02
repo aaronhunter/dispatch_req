@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <% render 'layouts/shim' %>
+  </head>
+  <body>
+    <header class="center span6 offset3">
+      <h2>Thanks for signing up, <%= @user.name %>.</h2>
+    </header>
+    <div>
+      <p>
+        Welcome to DispatchLink. This application is intended
+        solely for use by Team Schein Members to increase visibility
+        and communication between TechCentral Remote Support and
+        local centers nationwide to provide the highest quality
+        and seamless support to our customers.
+      <br/><br/>
+        <%= link_to "Click here", @url %> to sign in and begin using
+        DispatchLink.
+      </p>
+      <p>
+        Please provide any feedback, questions, or concerns to:
+        <a href="mailto:techcentral.support@henryschein.com">
+          TechCentral.Support@henryschein.com</a>
+      </p>
+      <p>
+        Thanks for using DispatchLink!
+      </p>
+      <p>
+        Sincerely,<br>
+        TechCentral Remote Support
+      </p>
+    </div>
+    <footer class="column">
+      <small>
+        Images and Logos Copyright of Henry Schein, Inc.
+      </small>
+      <nav>
+        <ul>
+          <li><%= link_to 'Sign in to DispatchLink', @url %></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
