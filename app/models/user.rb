@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
+  # :token_authenticatable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :center_id, :name
 
@@ -16,8 +16,20 @@ class User < ActiveRecord::Base
   validates :email, format: VALID_EMAIL_REGEX
   validates :name, :center_id, presence: true
 
+  def confirm!
+    send_welcome_email
+    super
+  end
+
+protected
+
+  def confirmation_required?
+    false
+  end
+
+private
+
   def send_welcome_email
-    @user = current_user
-    DispatchMailer.welcome_email(@user).deliver
+    DispatchMailer.welcome_email(self).deliver
   end
 end
