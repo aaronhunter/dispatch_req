@@ -5,6 +5,6 @@ class DispatchMailer < ActionMailer::Base
     @user = user
     @url = "http://morning-retreat-1875.herokuapp.com"
 
-    mail(to: user.email, subject: "Welcome to DisptachLink!")
+    mail(to: "#{user.name} <#{user.email}", subject: "Welcome to DisptachLink!")
   end
 end
