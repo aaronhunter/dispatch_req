@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :center_id, :name
 
-  after_save :send_welcome_email
-
   belongs_to :center
   has_many :requests
 

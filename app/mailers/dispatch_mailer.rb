@@ -4,7 +4,7 @@ class DispatchMailer < ActionMailer::Base
   def welcome_email(user)
     @user = user
     @url = "http://morning-retreat-1875.herokuapp.com"
-    email_with_name = "#{user.name} <#{user.email}"
+    email_with_name = "#{user.name} <#{user.email}>"
     mail(to: email_with_name, subject: "Welcome to DisptachLink!")
   end
 

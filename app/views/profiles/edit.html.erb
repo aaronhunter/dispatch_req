@@ -1,8 +1,7 @@
 <% provide(title: "Edit Profile") %>
-<h2 class="center">Edit Profile</h2>
-
+<h2>Edit Profile</h2>
 <div class="span6 offset3">
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= form_for(@user) do |f| %>
 
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -15,9 +14,6 @@
 
     <%= f.label :password_confirmation, "Confirm password" %>
     <%= f.password_field :password_confirmation %>
-
-    <%= f.label :center_id, "Center" %>
-    <%= collection_select :user, :center_id, Center.all, :id, :name %><br />
 
     <%= f.submit "Save changes", class: "btn btn-primary" %>
   <% end %>

@@ -6,11 +6,13 @@
         <%= gravatar_for(@user) %>
         <%= @user.name %>
       </h3>
+      <a href="http://gravatar.com/emails">Change gravatar image</a>
     </section>
     <nav class="profilenav span8">
       <ul>
-        <li><%= link_to "Create Dispatch", new_request_path, class: "btn btn-primary btn-profile" %></li>
-        <li><%= link_to "Find Dispatch", '#', class: "btn btn-primary btn-profile" %></li>
+        <li><%= link_to "Create Dispatch", new_request_path, class: "btn" %></li>
+        <li><%= link_to "Find Dispatch", '#', class: "btn" %></li>
+        <li><%= link_to "Edit Profile", edit_user_registration_path, class: "btn" %></li>
       </ul>
     </nav>
   </aside>

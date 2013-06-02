@@ -5,4 +5,8 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:id])
     @requests = @user.requests.paginate(page: params[:page])
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
 end
